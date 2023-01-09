@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Club List{% endblock %}
+
+{% block body %}
+    
+
+
+  
+
+  
+
+    <div class="container">
+        <h2 class="text-center mt-5 mb-3">Club Manager</h2>
+        <div class="card">
+            <div class="card-header">
+                <a class="btn btn-outline-primary" href="{{ path('app_club_new') }}"> 
+                    Create New Club 
+                </a>
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>Name</th>
+                        <th>Telephone</th>
+                        <th>Description</th>
+                        <th>Logo</th>
+                        <th>Date Created</th>
+                        <th>Date Updated</th>
+                        <th width="240px">Action</th>
+                    </tr>
+                    {% for club in clubs %}
+                    <tr>
+                        <td>{{ club.name }}</td>
+                         <td>{{ club.telephone }}</td>
+                        <td>{{ club.description }}</td>
+                           <td>{{ club.logo}}</td>
+                        <td>{{ club.createdAt ? club.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ club.updatedAt ? club.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <form method="post" action="{{ path('app_club_delete', {'id': club.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                                <a
+                                    class="btn btn-outline-info"
+                                    href="{{ path('app_club_show', {'id': club.id}) }}">
+                                    Show
+                                </a>
+                                <a
+                                    class="btn btn-outline-success"
+                                    href="{{ path('app_club_edit', {'id': club.id}) }}">
+                                    Edit
+                                </a>
+  
+                                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ club.id) }}">
+                                <button class="btn btn-outline-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+  
+{% endblock %}
