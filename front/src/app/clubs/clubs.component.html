@@ -4,7 +4,7 @@
 
     <div class="card-header card-responsive">
 
-      <button class="btn btn-outline-primary" routerLink="/add-club">
+      <button class="btn btn-primary" routerLink="/add-club">
       Creer nouveau Club 
       </button>  
     <br>
@@ -19,11 +19,11 @@
 
             <th class="text-center responsive" scope="col">Nom</th>
             <th class="text-center responsive" scope="col">logo</th>
-            <th class="text-center responsive" scope="col">Telephone </th>
+            <th class="text-center responsive" scope="col">Téléphone </th>
             <th class="text-center responsive" scope="col">Descritpion</th>
            
            
-            <th class="text-center responsive" scope="col">Date De Creation</th>
+            <th class="text-center responsive" scope="col">Date De Création</th>
             <th class="text-center responsive" scope="col">Date De Modification</th>
             <th class="text-center responsive" scope="col">Actions</th>
 
@@ -44,11 +44,11 @@
             <td>{{ club.updatedAt| date: 'dd/MM/yyyy'}}</td>
             <td>
               <form>
-                <i class="bi bi-eye btn-outline-info me-2 " [routerLink]="['/view-club',(club.id)]">
+                <i class="bi bi-eye btn-outline-primary me-2 " [routerLink]="['/view-club',(club.id)]">
                 
                
                 </i>
-                <i class="bi bi-pencil-square btn-outline-info me-2 " [routerLink]="['/edit-club',(club.id)]">
+                <i class="bi bi-pencil-square btn-outline-primary me-2 " [routerLink]="['/edit-club',(club.id)]">
                 
                
                 </i>

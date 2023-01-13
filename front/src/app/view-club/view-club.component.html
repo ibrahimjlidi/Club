@@ -1,40 +1,29 @@
 <div class="container ">
-   
-      
-        
-       <div class="container">
-         <h2 class="text-center mt-5 mb-3">Détails de club</h2>
-        <div class="card">
-     
+  <div class="container">
+    <h2 class="text-center mt-5 mb-3">Détails de club</h2>
+    <div class="card">
       <div class="card-body">
-            <form >
-              <div class="form-outline mb-4">
-                <div class="thumb-lg member-thumb mx-auto text-center"><img src={{club.logo}}  class="rounded mx-auto d-block wi" alt="Responsive image"></div>
-                <br>
-                  
-                <div class="form-label text-center   " for="form3Example4cg"><strong>{{club.name}}</strong></div>
-              
-                  </div>
-                
-               <div class="form-outline mb-4">
-              
-            
-              
-               <div class="form-outline mb-4">
-                <div class="form-label text-center" for="form3Example3cg" > <i class="bi bi-telephone-fill p-2" style="color: darkblue;"></i>{{club.telephone}}</div>
-                <div class="form-label text-center   " for="form3Example4cg">{{club.description}}</div>
-                <br>
-                 
-              
-             
-            </div>
-
-            <a class="btn btn-outline-info float-right" routerLink="/">
-              retour
-                    </a>
-                    </div>
-            </form>
+        <form>
+          <div class="form-outline mb-4">
+            <div class="thumb-lg member-thumb mx-auto text-center"><img src={{club.logo}}
+                class="rounded mx-auto d-block wi" alt="Responsive image"></div>
+            <br>
+            <div class="form-label text-center   " for="form3Example4cg"><strong>{{club.name}}</strong></div>
           </div>
-        </div>
+          <div class="form-outline mb-4">
+            <div class="form-outline mb-4">
+              <div class="form-label text-center" for="form3Example3cg"> <i class="bi bi-telephone-fill p-2"
+                  style="color: darkblue;"></i>{{club.telephone}}</div>
+              <div class="form-label text-center   " for="form3Example4cg">{{club.description}}</div>
+              <br>
+            </div>
+            <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+              <button class="btn btn-primary  mt-3 m-1 " routerLink="/">
+                Retour </button>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
+  </div>
+</div>

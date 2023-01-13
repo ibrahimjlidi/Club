@@ -49,9 +49,17 @@ export class EditClubComponent implements OnInit {
     })
   }
   update(){
+  
     if(this.club.name =='' || this.club.telephone == null || this.club.description == '' || this.club.logo == ''){
     
-        this.dialogRef.open(PopupComponent)
+        this.dialogRef.open(PopupComponent,{ data:{
+       
+          message: 'Remplissez tous les champs'
+      }, 
+      height: '300px',
+      width: '500px',});
+          
+        
       
     }
      else{

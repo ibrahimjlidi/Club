@@ -4,8 +4,7 @@
           <div   *ngIf="Alert"  class="alert alert-success">
             <button type="button"  (click)="closeAlert()"   class=" border-0 close" data-dismiss="alert"  aria-label="Close" aria-hidden="true">
                 ×</button>
-           <span class="glyphicon glyphicon-ok"></span> <strong>Club Ajouté</strong>
-            <hr class="message-inner-separator">
+          
             <p>
               Vous avez réussi à créer un nouveau club </p>
         </div>
@@ -32,7 +31,7 @@
                   </div>
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="form3Example4cg">Telephone</label>
+                  <label class="form-label" for="form3Example4cg">Téléphone</label>
                   <input type="number" class="form-control form-control-lg" formControlName="phone"
                     [ngClass]="{'is-invalid':submitted && registerForm.controls['phone'].errors}" />
                   <div *ngIf="submitted && registerForm.controls['phone'].errors" class="text-danger">
@@ -70,13 +69,14 @@
                 </div>
                 
                 <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                  <button type="submit" class="btn btn-outline-primary mt-3 align" >Enregister
+                  <button class="btn btn-outline-primary float-right  mt-3 m-1" routerLink="/">
+                    retour
+                  </button>
+                  <button type="submit" class="btn btn-primary mt-3 m-1" >Enregister
                       Club</button>
               </div>
 
-              <a class="btn btn-outline-info float-right" routerLink="/">
-                retour
-            </a>
+              
               </form>
             </div>
           </div>

@@ -7,7 +7,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class ModelComponent {
   message: string = "Are you sure want to delete?"
-  confirmButtonText = "Je confirme"
+  confirmButtonText = "Confirmer"
   cancelButtonText = " Annuler"
   constructor(@Inject(MAT_DIALOG_DATA) private data: any, private dialogRef: MatDialogRef<ModelComponent>) {
       if(data){

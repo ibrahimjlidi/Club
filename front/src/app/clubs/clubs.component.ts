@@ -68,10 +68,10 @@ openDialog(id:number) {
   const dialogRef = this.dialog.open(ModelComponent,{
   data:{
    
-      message: 'Do you want to delete the product and the associated licenses?'
+      message: 'Voulez-vous vraiment supprimer ce club ?'
   }, 
-  height: '400px',
-  width: '600px',
+  height: '300px',
+  width: '500px',
   
   
   });

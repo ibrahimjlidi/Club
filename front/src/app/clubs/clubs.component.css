@@ -3,9 +3,7 @@
 Generic Styling, for Desktops/Laptops 
 */
 
-.modal1 active{
-background-color: aliceblue !important;
-}
-::ng-deep.mat-dialog-container {
-    padding: 25px !important;
+.mat-dialog-container {
+    width: 25%;
+    height: 25%;
 }

@@ -3,8 +3,8 @@
     <div   *ngIf="Alert"  class="alert alert-success">
         <button type="button"  (click)="closeAlert()"   class=" border-0 close" data-dismiss="alert"  aria-label="Close" aria-hidden="true">
             ×</button>
-       <span class="glyphicon glyphicon-ok"></span> <strong>Club modifié avec succès</strong>
-        <hr class="message-inner-separator">
+     
+        
         <p>
             Vous avez modifié vos informations avec succès </p>
     </div>
@@ -30,7 +30,7 @@
                 <div class="d-flex flex-row align-items-center mb-4">
                     <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                     <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="Telephone">Telephone</label>
+                        <label class="form-label" for="Telephone">Téléphone</label>
                         <input type="number" name="telephone" [(ngModel)]="club.telephone" class="form-control" />
 
 
@@ -68,12 +68,12 @@
 
 
                 <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button type="button" class="btn btn-outline-primary mt-3 align" (click)="update()">Enregister
-                        Club</button>
+                    <button class="btn btn-outline-primary mt-3 m-1" routerLink="/">
+                        Retour             </button>
+                    <button type="button" class="btn btn-primary mt-3 m-1" (click)="update()">Enregister</button>
                 </div>
 
-                <a class="btn btn-outline-info float-right" routerLink="/">
-                    retour                </a>
+               
             </form>
 
         </div>

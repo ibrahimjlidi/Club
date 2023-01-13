@@ -9,7 +9,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class PopupComponent {
 
   message: string = "Remplissez tous les champs"
-  confirmButtonText = "ok"
+  confirmButtonText = "   ok    "
 
   constructor(@Inject(MAT_DIALOG_DATA) private data: any, private dialogRef: MatDialogRef<PopupComponent>) {
       if(data){

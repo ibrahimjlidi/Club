@@ -1,6 +1,7 @@
 button {
     margin-right: 8px;
   }
-  ::ng-deep.mat-dialog-container {
-    padding: 25px !important;
+.mat-dialog-container {
+   width: 25%;
+   height: 25%;
 }
