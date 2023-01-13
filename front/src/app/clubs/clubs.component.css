@@ -2,24 +2,10 @@
 /* 
 Generic Styling, for Desktops/Laptops 
 */
-table { 
-    width: 100%; 
-    border-collapse: collapse; 
-  }
-  /* Zebra striping */
-  tr:nth-of-type(odd) { 
-    background: #eee; 
-  }
-  th { 
-    background: #333; 
-    color: white; 
-    font-weight: bold; 
-  }
-  td, th { 
-    padding: 6px; 
-    border: 1px solid #ccc; 
-    text-align: left; 
-  }
-  .pad{
-    padding-right: 25px;
-  }
+
+.modal1 active{
+background-color: aliceblue !important;
+}
+::ng-deep.mat-dialog-container {
+    padding: 25px !important;
+}

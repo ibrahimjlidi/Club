@@ -1,3 +1,33 @@
-.align{
-    justify-content: left !important;;
+.close{
+    font-size:21px;
+    font-weight:700;
+    line-height:1;
+    color:#000;
+    text-shadow: 0 1px 0 #fff;
+    float: right;
+    background-color:#d1e7dd;
+  
+    opacity: .2;
+}
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.button {
+    margin: 0;
+    font: inherit;
+    text-transform: none;
+    font-family: inherit
+}
+.button.close{
+    cursor: pointer;
+}
+.button {
+    margin-bottom: 3px;
 }

@@ -1,12 +1,17 @@
-<p>edit-club works!</p>
+
 <div class="container">
-    <h2 class="text-center mt-5 mb-3">Edit Club</h2>
+    <div   *ngIf="Alert"  class="alert alert-success">
+        <button type="button"  (click)="closeAlert()"   class=" border-0 close" data-dismiss="alert"  aria-label="Close" aria-hidden="true">
+            ×</button>
+       <span class="glyphicon glyphicon-ok"></span> <strong>Club modifié avec succès</strong>
+        <hr class="message-inner-separator">
+        <p>
+            Vous avez modifié vos informations avec succès </p>
+    </div>
+    <h2 class="text-center mt-5 mb-3">Modifier Club</h2>
+
     <div class="card">
-        <div class="card-header">
-            <a class="btn btn-outline-info float-right" routerLink="/">
-                View All Club
-            </a>
-        </div>
+       
         <div class="card-body">
 
             <form>
@@ -55,6 +60,7 @@
                     </div>
 
                 </div>
+              
 
 
 
@@ -66,9 +72,11 @@
                         Club</button>
                 </div>
 
-                <a>back to list</a>
+                <a class="btn btn-outline-info float-right" routerLink="/">
+                    retour                </a>
             </form>
 
         </div>
     </div>
+    
 </div>

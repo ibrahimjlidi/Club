@@ -1,39 +1,40 @@
-<p>view-club works!</p>
-<h1>Club</h1>
+<div class="container ">
+   
+      
+        
+       <div class="container">
+         <h2 class="text-center mt-5 mb-3">Détails de club</h2>
+        <div class="card">
+     
+      <div class="card-body">
+            <form >
+              <div class="form-outline mb-4">
+                <div class="thumb-lg member-thumb mx-auto text-center"><img src={{club.logo}}  class="rounded mx-auto d-block wi" alt="Responsive image"></div>
+                <br>
+                  
+                <div class="form-label text-center   " for="form3Example4cg"><strong>{{club.name}}</strong></div>
+              
+                  </div>
+                
+               <div class="form-outline mb-4">
+              
+            
+              
+               <div class="form-outline mb-4">
+                <div class="form-label text-center" for="form3Example3cg" > <i class="bi bi-telephone-fill p-2" style="color: darkblue;"></i>{{club.telephone}}</div>
+                <div class="form-label text-center   " for="form3Example4cg">{{club.description}}</div>
+                <br>
+                 
+              
+             
+            </div>
 
-<table class="table">
-    <tbody>
-        <tr>
-            <th>Id</th>
-            <td>{{ club.id }}</td>
-        </tr>
-        <tr>
-            <th>Name</th>
-            <td>{{ club.name }}</td>
-        </tr>
-        <tr>
-            <th>Telephone</th>
-            <td>{{ club.telephone }}</td>
-        </tr>
-        <tr>
-            <th>Description</th>
-            <td>{{ club.description }}</td>
-        </tr>
-        <tr>
-            <th>Created_at</th>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Updated_at</th>
-            <td></td>
-        </tr>
-        <tr>
-            <th>Logo</th>
-            <td>{{ club.logo }}</td>
-        </tr>
-    </tbody>
-</table>
-
-<a>back to list</a>
-
-<a >edit</a>
+            <a class="btn btn-outline-info float-right" routerLink="/">
+              retour
+                    </a>
+                    </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>

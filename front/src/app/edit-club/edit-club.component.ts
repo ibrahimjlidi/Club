@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Club, ClubService } from '../club.service';
 import { __param } from 'tslib';
+import { NgbAlert } from '@ng-bootstrap/ng-bootstrap';
+import { VirtualTimeScheduler } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
+import { PopupComponent } from '../popup/popup.component';
 @Component({
   selector: 'app-edit-club',
   templateUrl: './edit-club.component.html',
@@ -11,7 +15,9 @@ import { __param } from 'tslib';
 export class EditClubComponent implements OnInit {
   constructor(private route:ActivatedRoute,
     private clubService:ClubService,
-    private router: Router) { }
+    private router: Router,
+    private dialogRef:MatDialog
+    ) { }
   RegisterForm! : FormGroup;
   submitted = false;
   itemId: number | any= 0;
@@ -24,6 +30,7 @@ export class EditClubComponent implements OnInit {
      updatedAt: new Date,
      id: undefined
    };
+   Alert:boolean = false;
 
   ngOnInit(): void {
   
@@ -42,12 +49,25 @@ export class EditClubComponent implements OnInit {
     })
   }
   update(){
+    if(this.club.name =='' || this.club.telephone == null || this.club.description == '' || this.club.logo == ''){
+    
+        this.dialogRef.open(PopupComponent)
+      
+    }
+     else{
     this.clubService
     .update(this.itemId, this.club)
     .subscribe(() => {
-      this.router.navigate(['']);
+      this.Alert = true;
+    /*   this.router.navigate(['']); */
     });
   }
+   }
+  closeAlert() {
+    this.Alert = false;
+  }
+
+  
  
 }
 

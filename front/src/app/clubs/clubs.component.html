@@ -1,12 +1,15 @@
 <div class="container">
-  <h2 class="text-center mt-5 mb-3">Club Manager</h2>
 
-    <div class="card-header">
+  <h2 class="text-center mt-5 mb-3">List Des Clubs</h2>
 
-      <a class="btn btn-outline-primary" routerLink="/add-club">
-        Create New Club
-      </a>
+    <div class="card-header card-responsive">
 
+      <button class="btn btn-outline-primary" routerLink="/add-club">
+      Creer nouveau Club 
+      </button>  
+    <br>
+    <br>
+ 
     </div>
     <div class="card-body card-responsive">
       <table class="table table-bordered table-responsive ">
@@ -14,12 +17,14 @@
 
           <tr>
 
-            <th class="text-center responsive" scope="col">Name</th>
-            <th class="text-center responsive" scope="col">phone </th>
-            <th class="text-center responsive" scope="col">descritpion</th>
+            <th class="text-center responsive" scope="col">Nom</th>
             <th class="text-center responsive" scope="col">logo</th>
-            <th class="text-center responsive" scope="col">Date Created</th>
-            <th class="text-center responsive" scope="col">Date Updated</th>
+            <th class="text-center responsive" scope="col">Telephone </th>
+            <th class="text-center responsive" scope="col">Descritpion</th>
+           
+           
+            <th class="text-center responsive" scope="col">Date De Creation</th>
+            <th class="text-center responsive" scope="col">Date De Modification</th>
             <th class="text-center responsive" scope="col">Actions</th>
 
 
@@ -30,31 +35,38 @@
 
           <tr *ngFor="let club of clubs">
             <td class="text-center">{{club.name}}</td>
+            <td class="text-center">
+              <img class="circular--square"
+              src={{club.logo}}></td>
             <td class="text-center">{{club.telephone}}</td>
             <td class="text-center">{{club.description}}</td>
-            <td class="text-center"><img class="circular--square" [src]="(club.logo)" />{{club.logo}}</td>
-
-
             <td>{{ club.createdAt| date: 'dd/MM/yyyy'}}</td>
             <td>{{ club.updatedAt| date: 'dd/MM/yyyy'}}</td>
             <td>
               <form>
-
+                <i class="bi bi-eye btn-outline-info me-2 " [routerLink]="['/view-club',(club.id)]">
+                
+               
+                </i>
                 <i class="bi bi-pencil-square btn-outline-info me-2 " [routerLink]="['/edit-club',(club.id)]">
                 
                
                 </i>
-                
+               
+             
 
                 <input type="hidden" name="_token">
-                <i class="bi bi-trash3-fill btn-outline-danger me" (click)="deleteClub(club.id)"></i>
+                <i class="bi bi-trash3-fill btn-outline-danger me" (click)="openDialog(club.id)"></i>
+                
               </form>
             </td>
           </tr>
+
         </tbody>
 
-
+        
 
       </table>
+       
     </div>
   </div>

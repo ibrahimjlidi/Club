@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgConfirmService } from 'ng-confirm-box';
 import { ClubService, Club } from '../club.service';
 
 @Component({
@@ -10,8 +11,9 @@ import { ClubService, Club } from '../club.service';
 export class ViewClubComponent {
   constructor(private route:ActivatedRoute,
     private clubService:ClubService,
-    private router: Router) { }
-  
+    private router: Router
+    ,private confirmService: NgConfirmService) { }
+    clubs!:any;
   itemId: number | any= 0;
   club: Club = {
     name: '',
@@ -39,4 +41,18 @@ export class ViewClubComponent {
 
    })
  }
+ deleteClub(id:any){
+
+  this.confirmService.showConfirm('Voulez-vous vraiment supprimer ce club ?',
+  ()=>{
+    this.clubService.delete(id).subscribe(res => {
+      this.router.navigate(['']);
+       console.log('Club deleted successfully!');
+     })
+  },
+ ()=>{
+
+ }
+ )
+}
 }

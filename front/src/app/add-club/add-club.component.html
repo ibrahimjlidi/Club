@@ -1,85 +1,85 @@
-<div class="container">
-  <h2 class="text-center mt-5 mb-3">Ajouter Club</h2>
-  <div class="card">
-    <div class="card-header">
-
-      <a class="btn btn-outline-info float-right" routerLink="/"> Voir tous les clubs</a>
-
-    </div>
-    <div class="card-body">
-     <form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()" >
-
-        <div class="form-group" class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-          <div class="form-outline flex-fill mb-0">
-            <label class="form-label" for="Name">Nom</label>
-            <input  formControlName="Name"  [ngClass]="{'is-invalid':submitted && RegisterForm.controls['Name'].errors}" type="text"  class="form-control" />
-            <div  *ngIf ="submitted && RegisterForm.controls['Name'].errors" class ="text-danger">
-            <div *ngIf ="submitted && RegisterForm.controls['Name'].errors['required']">
-            Nom non valide</div>
-             </div>
-           </div>
+<div class="container ">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div   *ngIf="Alert"  class="alert alert-success">
+            <button type="button"  (click)="closeAlert()"   class=" border-0 close" data-dismiss="alert"  aria-label="Close" aria-hidden="true">
+                ×</button>
+           <span class="glyphicon glyphicon-ok"></span> <strong>Club Ajouté</strong>
+            <hr class="message-inner-separator">
+            <p>
+              Vous avez réussi à créer un nouveau club </p>
         </div>
-
-        <div class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-          <div class="form-outline flex-fill mb-0">
-            <label class="form-label" for="Telephone">Telephone</label>
-            <input type="number"  formControlName="Telephone"  [ngClass]="{'is-invalid':submitted && RegisterForm.controls['Telephone'].errors}"  class="form-control" />
-            <div  *ngIf ="submitted && RegisterForm.controls['Telephone'].errors" class ="text-danger">
-            <div *ngIf ="submitted && RegisterForm.controls['Telephone'].errors['required']">
-            Telephone non valide</div>
-             </div>
-             
-           </div>
-          </div>
         
+          
+         <div class="container">
+           <h2 class="text-center mt-5 mb-3">Créer un club</h2>
+          <div class="card">
+       
+        <div class="card-body">
+              <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="form-outline mb-4">
+                  <label for="form3Example3cg">Nom</label>
+                  <input type="text" class="form-control form-control-lg" formControlName="name"
+                    [ngClass]="{'is-invalid':submitted && registerForm.controls['name'].errors}" />
+                  <div *ngIf="submitted && registerForm.controls['name'].errors" class="text-danger">
+                    <br>
+                    <div *ngIf="submitted && registerForm.controls['name'].errors['required']">
+                      <small> Champ obligatoire</small>
+                       </div>
+                       <div *ngIf="submitted && registerForm.controls['name'].errors['minlength']">
+                       <small>Nom doit etre superieur a 6</small>
+                     </div>
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example4cg">Telephone</label>
+                  <input type="number" class="form-control form-control-lg" formControlName="phone"
+                    [ngClass]="{'is-invalid':submitted && registerForm.controls['phone'].errors}" />
+                  <div *ngIf="submitted && registerForm.controls['phone'].errors" class="text-danger">
+                    <br>
+                    <div *ngIf="submitted && registerForm.controls['phone'].errors['required']">
+                      Champ obligatoire*
+                    </div>
+                  </div>
+                </div>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example4cg">Description</label>
+                  <input type="text" class="form-control form-control-lg" formControlName="description"
+                    [ngClass]="{'is-invalid':submitted && registerForm.controls['description'].errors}" />
+                  <div *ngIf="submitted && registerForm.controls['description'].errors" class="text-danger">
+                    <br>
+                    <div *ngIf="submitted && registerForm.controls['description'].errors['required']">
+                      <small>Champ obligatoire</small>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example3cg">logo</label>
+                  <input type="text" class="form-control form-control-lg" formControlName="logo"
+                    [ngClass]="{'is-invalid':submitted && registerForm.controls['logo'].errors}" />
+                  <div *ngIf="submitted && registerForm.controls['logo'].errors" class="text-danger">
+                    <br>
+                    <div *ngIf="submitted && registerForm.controls['logo'].errors['required']">
+                      <small> Champ obligatoire</small>
+                    </div>
+                    <div *ngIf="submitted && registerForm.controls['logo'].errors['minlength']">
+                      <small> logo n'est pas valide</small>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                  <button type="submit" class="btn btn-outline-primary mt-3 align" >Enregister
+                      Club</button>
+              </div>
 
-        <div class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-          <div class="form-outline flex-fill mb-0">
-            <label class="form-label" for="Description">Description</label>
-            <input type="text" formControlName="Description"  [ngClass]="{'is-invalid':submitted && RegisterForm.controls['Description'].errors}"  class="form-control" />
-            <div  *ngIf ="submitted && RegisterForm.controls['Description'].errors" class ="text-danger">
-            <div *ngIf ="submitted && RegisterForm.controls['Description'].errors['required']">
-            Description non valide</div>
-             </div>
-           </div>
-          </div>
-        
-        <div class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-          <div class="form-outline flex-fill mb-0">
-            <label class="form-label" for="logo">logo</label>
-            <input type="text" formControlName="logo"  [ngClass]="{'is-invalid':submitted && RegisterForm.controls['logo'].errors}"  class="form-control" />
-            <div  *ngIf ="submitted && RegisterForm.controls['logo'].errors" class ="text-danger">
-            <div *ngIf ="submitted && RegisterForm.controls['logo'].errors['required']">
-            logo non valide</div>
-             </div>
-           </div>
-          </div>
-          <div class="d-flex flex-row align-items-center mb-4">
-            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-            <div class="form-outline flex-fill mb-0">
-              <label class="form-label" for="logo">details</label>
-              <input type="text" formControlName="details"  [ngClass]="{'is-invalid':submitted && RegisterForm.controls['details'].errors}"  class="form-control" />
-              <div  *ngIf ="submitted && RegisterForm.controls['details'].errors" class ="text-danger">
-              <div *ngIf ="submitted && RegisterForm.controls['details'].errors['required']">
-                details non valide</div>
-               </div>
-             </div>
+              <a class="btn btn-outline-info float-right" routerLink="/">
+                retour
+            </a>
+              </form>
             </div>
-        
-
-
-
-
-
-        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-          <button type="submit" class="btn btn-outline-primary mt-3 align"  >Enregister Club</button>
+          </div>
         </div>
-
-      </form> 
+      </div>
     </div>
-  </div>
-</div> 

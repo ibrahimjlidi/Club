@@ -11,13 +11,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditClubComponent } from './edit-club/edit-club.component';
 import { ViewClubComponent } from './view-club/view-club.component';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgConfirmModule  } from 'ng-confirm-box';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModelComponent } from './model/model.component';  
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatButtonModule } from '@angular/material/button';
+import { PopupComponent } from './popup/popup.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ClubsComponent, 
-    AddClubComponent, EditClubComponent, ViewClubComponent
+    AddClubComponent, EditClubComponent, ViewClubComponent, ModelComponent, PopupComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +31,15 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgConfirmModule,
+    NgbModule,
+    MatDialogModule,
+    MatButtonModule
+    
+
+    
+  
     
   ],
   schemas: [

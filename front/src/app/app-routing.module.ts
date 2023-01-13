@@ -9,7 +9,7 @@ const routes: Routes = [
    {path :'', component :ClubsComponent},
    {path:'add-club',component:AddClubComponent},
    {path:'edit-club/:id',component:EditClubComponent},
-   {path:'view-club',component:ViewClubComponent}
+   {path:'view-club/:id',component:ViewClubComponent}
 ];
 
 @NgModule({

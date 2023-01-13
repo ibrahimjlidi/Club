@@ -1,0 +1,9 @@
+
+<h5 class="text-center mt-5 mb-3">Confirmez -vous la suppression </h5>
+<mat-dialog-content align="center">
+<p class=" text-center mt-5 mb-3"> Si vous confirmez, le club déffinitivement effacé</p>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+<button class="btn btn-primary" (click)="onConfirmClick()" tabindex="1">{{confirmButtonText}}</button>
+<button mat-dialog-close tabindex ="-1 " class="btn btn-accent">{{cancelButtonText}}</button>
+</mat-dialog-actions>
