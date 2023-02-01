@@ -36,11 +36,6 @@ import { PopupComponent } from './popup/popup.component';
     NgbModule,
     MatDialogModule,
     MatButtonModule
-    
-
-    
-  
-    
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

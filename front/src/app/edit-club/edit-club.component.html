@@ -1,82 +1,79 @@
-
 <div class="container">
-    <div   *ngIf="Alert"  class="alert alert-success">
-        <button type="button"  (click)="closeAlert()"   class=" border-0 close" data-dismiss="alert"  aria-label="Close" aria-hidden="true">
-            ×</button>
-     
-        
-        <p>
-            Vous avez modifié vos informations avec succès </p>
-    </div>
-    <h2 class="text-center mt-5 mb-3">Modifier Club</h2>
-
-    <div class="card">
-       
-        <div class="card-body">
-
-            <form>
-
-                <div class="form-group" class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="Name">Nom</label>
-                        <input name="name" [(ngModel)]="club.name" class="form-control" />
+	<br>
+	<div *ngIf="Alert" class="alert alert-success">
+		<button type="button" (click)="closeAlert()" class=" border-0 close" data-dismiss="alert" aria-label="Close" aria-hidden="true">
+			×</button>
 
 
-                    </div>
+		<p>
+			Vous avez modifié vos informations avec succès
+		</p>
+	</div>
+	<h2 class="text-center mt-5 mb-3">Modifier Club</h2>
 
-                </div>
+	<div class="card">
 
-                <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="Telephone">Téléphone</label>
-                        <input type="number" name="telephone" [(ngModel)]="club.telephone" class="form-control" />
+		<div class="card-body">
 
+			<form>
 
-                    </div>
-
-                </div>
-
-
-                <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="Description">Description</label>
-                        <input type="text" name="description" [(ngModel)]="club.description" class="form-control" />
+				<div class="form-group" class="d-flex flex-row align-items-center mb-4">
+					<i class="fas fa-user fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+						<label class="form-label" for="Name">Nom</label>
+						<input name="name" [(ngModel)]="club.name" class="form-control"/>
 
 
-                    </div>
+					</div>
 
-                </div>
+				</div>
 
-                <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                    <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="logo">logo</label>
-                        <input type="text" name="logo" [(ngModel)]="club.logo" class="form-control" />
-
-
-                    </div>
-
-                </div>
-              
+				<div class="d-flex flex-row align-items-center mb-4">
+					<i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+						<label class="form-label" for="Telephone">Téléphone</label>
+						<input type="number" name="telephone" [(ngModel)]="club.telephone" class="form-control"/>
 
 
+					</div>
+
+				</div>
 
 
+				<div class="d-flex flex-row align-items-center mb-4">
+					<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+						<label class="form-label" for="Description">Description</label>
+						<input type="text" name="description" [(ngModel)]="club.description" class="form-control"/>
 
 
-                <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                    <button class="btn btn-outline-primary mt-3 m-1" routerLink="/">
-                        Retour             </button>
-                    <button type="button" class="btn btn-primary mt-3 m-1" (click)="update()">Enregister</button>
-                </div>
+					</div>
 
-               
-            </form>
+				</div>
 
-        </div>
-    </div>
-    
+				<div class="d-flex flex-row align-items-center mb-4">
+					<i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+					<div class="form-outline flex-fill mb-0">
+						<label class="form-label" for="logo">logo</label>
+						<input type="text" name="logo" [(ngModel)]="club.logo" class="form-control"/>
+
+
+					</div>
+
+				</div>
+
+
+				<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4 reponsive">
+					<button class="btn btn-outline-primary float-right  mt-3 m-1" routerLink="/">
+                        Retour
+                      </button>                                                              
+					<button type="button" class="btn btn-primary mt-3 m-1" (click)="update()">Enregister</button>
+				</div>
+
+
+			</form>
+
+		</div>
+	</div>
+
 </div>

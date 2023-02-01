@@ -6,7 +6,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./model.component.css']
 })
 export class ModelComponent {
-  message: string = "Are you sure want to delete?"
+  message: string = "Confirmez -vous la suppression ?"
   confirmButtonText = "Confirmer"
   cancelButtonText = " Annuler"
   constructor(@Inject(MAT_DIALOG_DATA) private data: any, private dialogRef: MatDialogRef<ModelComponent>) {

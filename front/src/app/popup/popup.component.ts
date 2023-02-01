@@ -12,16 +12,16 @@ export class PopupComponent {
   confirmButtonText = "   ok    "
 
   constructor(@Inject(MAT_DIALOG_DATA) private data: any, private dialogRef: MatDialogRef<PopupComponent>) {
-      if(data){
-          this.message = data.message || this.message;
-          if (data.buttonText) {
-              this.confirmButtonText = data.buttonText.ok || this.confirmButtonText;
-             
-          }
+    if (data) {
+      this.message = data.message || this.message;
+      if (data.buttonText) {
+        this.confirmButtonText = data.buttonText.ok || this.confirmButtonText;
+
       }
+    }
   }
 
   onConfirmClick(): void {
-      this.dialogRef.close(true);
+    this.dialogRef.close(true);
   }
 }
