@@ -67,6 +67,22 @@ class ClubController extends AbstractController
         return $this->json($club);
     }
 
+    #[Route('/{id}/{name}', name: 'app_club_showClub', methods: ['GET'])]
+public function showClub(Club $club, ManagerRegistry $doctrine, int $id, string $name): Response
+{
+    $club = $doctrine->getRepository(Club::class)->find($id);
+    if (!$club) {
+        throw $this->createNotFoundException(
+            'no Club found for id ' . $id
+        );
+    }
+    if ($club->getName() !== $name) {
+        throw $this->createNotFoundException(
+            'id and name do not correspond to the same club'
+        );
+    }
+    return $this->json($club);
+}
     #[Route('/edit/{id}', name: 'app_club_edit', methods: ['PUT'])]
     public function edit(Request $request, Club $club, ClubRepository $clubRepository, ManagerRegistry $doctrine, $id): Response
     {

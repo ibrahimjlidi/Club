@@ -15,6 +15,7 @@ export class ViewClubComponent {
     ,private confirmService: NgConfirmService) { }
     clubs!:any;
   itemId: number | any= 0;
+  itemName :string | any='';
   club: Club = {
     name: '',
     telephone: 0,
@@ -29,11 +30,13 @@ export class ViewClubComponent {
  
    this.route.paramMap.subscribe((param) => {
      this.itemId = param.get('id') ?? 0;
+     this.itemName = param.get('name') ?? '';
      this.getById();
+     console.log('lol',this.itemId,this.itemName)
    });
  }
  getById(){
-   this.clubService.getClubsById(this.itemId).subscribe((data) => {
+   this.clubService.getClubsByIdName(this.itemId, this.itemName).subscribe((data) => {
      this.club.name = data.name;
      this.club.telephone = data.telephone;
      this.club.description = data.description;

@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 
 
 export interface Club{
-id: any;
+  id: any;
   name?:string;
   telephone?:number;
   description?:string;
@@ -43,6 +43,9 @@ export class ClubService {
   getClubsById(id:any){
     return this.http.get<Club>(`http://localhost:8000/club/${id}`)
   }
+  getClubsByIdName(id:any,name:any){
+    return this.http.get<Club>(`http://localhost:8000/club/${id}/${name}`)
+  } 
   register(club: any){
 
     return this.http.post<any>('http://localhost:8000/club/new',club).pipe(
