@@ -22,6 +22,7 @@ class ClubController extends AbstractController
     #[Route('/', name: 'app_club_index', methods: ['GET'])]
     public function index(ManagerRegistry $doctrine): JsonResponse
     {
+       
         $club = $doctrine->getRepository(Club::class)->findAll();
         return $this->json(
             $club
@@ -58,13 +59,14 @@ class ClubController extends AbstractController
     #[Route('/{id}', name: 'app_club_show', methods: ['GET'])]
     public function show(Club $club, ManagerRegistry $doctrine, int $id): Response
     {
+        $text='description';
         $club = $doctrine->getRepository(Club::class)->find($id);
         if (!$club) {
             throw $this->createNotFoundException(
                 'no Club found for id ' . $id
             );
         }
-        return $this->json($club);
+        return $this->json($club,$text);
     }
 
     #[Route('/{id}/{name}', name: 'app_club_showClub', methods: ['GET'])]
