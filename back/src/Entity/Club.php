@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ClubRepository;
+use ApiPlatform\Metadata\ApiResource;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
@@ -11,6 +12,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
 #[ORM\Entity(repositoryClass: ClubRepository::class)]
+#[ApiResource]
 #[Vich\Uploadable]
 class Club
 {

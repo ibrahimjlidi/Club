@@ -56,7 +56,7 @@ class ClubController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_club_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_club_show')]
     public function show(Club $club, ManagerRegistry $doctrine, int $id): Response
     {
         $text='description';
