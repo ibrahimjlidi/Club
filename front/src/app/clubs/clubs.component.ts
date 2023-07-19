@@ -17,6 +17,7 @@ export class ClubsComponent implements OnInit {
   url = "https://cdn.worldvectorlogo.com/logos/club-africain.svg";
   clubs!: any;
   club: any;
+  text: any;
 
   constructor(private clubService: ClubService
     , private confirmService: NgConfirmService,

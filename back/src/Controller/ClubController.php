@@ -22,6 +22,7 @@ class ClubController extends AbstractController
     #[Route('/', name: 'app_club_index', methods: ['GET'])]
     public function index(ManagerRegistry $doctrine): JsonResponse
     {
+       
         $club = $doctrine->getRepository(Club::class)->findAll();
         return $this->json(
             $club
@@ -55,18 +56,35 @@ class ClubController extends AbstractController
         ]);
     }
 
-    #[Route('/{id}', name: 'app_club_show', methods: ['GET'])]
+    #[Route('/{id}', name: 'app_club_show')]
     public function show(Club $club, ManagerRegistry $doctrine, int $id): Response
     {
+        $text='description';
         $club = $doctrine->getRepository(Club::class)->find($id);
         if (!$club) {
             throw $this->createNotFoundException(
                 'no Club found for id ' . $id
             );
         }
-        return $this->json($club);
+        return $this->json($club,$text);
     }
 
+    #[Route('/{id}/{name}', name: 'app_club_showClub', methods: ['GET'])]
+public function showClub(Club $club, ManagerRegistry $doctrine, int $id, string $name): Response
+{
+    $club = $doctrine->getRepository(Club::class)->find($id);
+    if (!$club) {
+        throw $this->createNotFoundException(
+            'no Club found for id ' . $id
+        );
+    }
+    if ($club->getName() !== $name) {
+        throw $this->createNotFoundException(
+            'id and name do not correspond to the same club'
+        );
+    }
+    return $this->json($club);
+}
     #[Route('/edit/{id}', name: 'app_club_edit', methods: ['PUT'])]
     public function edit(Request $request, Club $club, ClubRepository $clubRepository, ManagerRegistry $doctrine, $id): Response
     {
